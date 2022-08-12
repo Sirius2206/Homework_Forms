@@ -1,23 +1,39 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import HexRgb from './components/HexRgb';
 import './App.css';
 
 function App() {
+  const [app, setApp] = useState(<HexRgb />);
+  const [currentClass, setCurrentClass] = useState("hex");
+  const apps = [
+    {
+      name: "hex",
+      component: <HexRgb />
+    },
+    {
+      name: "",
+      component: ''
+    },
+    {
+      name: "dropdown",
+      component: ''
+    }
+  ]
+
+  const handleClick = e => {
+    const curApp = apps.find(item => item.name === e.target.className);
+    setApp(curApp.component);
+    setCurrentClass(curApp.name);
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className='container'>
+      <header className="header_main">
+        <button className='hex' onClick={handleClick}>Задание №1(Цвета)</button>
+        <button className='' onClick={handleClick}>Задание №2()</button>
+        <button className="" onClick={handleClick}>Задание №3()</button>
       </header>
+      <div className={"app_" + currentClass}>{app}</div>
     </div>
   );
 }

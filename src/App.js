@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import HexRgb from './components/HexRgb';
+import HexRgb from './components/Hex2RGB/HexRgb';
+import Training from './components/Training/Training';
 import './App.css';
 
 function App() {
@@ -11,8 +12,8 @@ function App() {
       component: <HexRgb />
     },
     {
-      name: "",
-      component: ''
+      name: "training",
+      component: <Training />
     },
     {
       name: "dropdown",
@@ -30,7 +31,7 @@ function App() {
     <div className='container'>
       <header className="header_main">
         <button className='hex' onClick={handleClick}>Задание №1(Цвета)</button>
-        <button className='' onClick={handleClick}>Задание №2()</button>
+        <button className='training' onClick={handleClick}>Задание №2(Учет тренировок)</button>
         <button className="" onClick={handleClick}>Задание №3()</button>
       </header>
       <div className={"app_" + currentClass}>{app}</div>

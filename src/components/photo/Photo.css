@@ -25,6 +25,30 @@
     align-items: center;
     flex-wrap: wrap;
 }
+
+.Photo-input {
+    cursor: pointer;
+    width: 500px;
+    height: 200px;
+    margin: 50px 50px;
+    background-color: #f5f5f5;
+    border: 2px outset lightgray;
+    border-radius:  50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Photo-input span {
+    position: absolute;
+    margin: auto;
+
+    font-size: 4rem;
+}
+
+.Photo-input input {
+    display: none;
+} 
 .Photo-delete {
     position: absolute;
     top: -10px;

@@ -37,15 +37,16 @@ function Photo() {
     // const temp = urls;
     // temp.splice(index, 1);
     // setUrls(temp);
-    
+
     setUrls(urls.filter(item => item !== photo));
   }
 
   return (
     <div>
-      <form>
-        <input type="file" multiple name="image" onChange={handleSelect} />
-      </form>
+        <label className="Photo-input">
+        <span>Click to select</span>
+        <input type="file" accept="image/*" multiple name="image" onChange={handleSelect} />
+        </label>
       <div className="Photo-container">
         {urls.map((item, index) => (
           <PhotoPreview key={nanoid()} photo={item} index={index} handleDelete={handleDelete}/>

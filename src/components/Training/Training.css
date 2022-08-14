@@ -1,0 +1,83 @@
+.Tr-window {
+    background-color: lightseagreen;
+    
+    width: 550px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.Tr-form {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Tr-label{
+    display: flex;
+    flex-direction: column;
+}
+.Tr-input {
+    padding: 10px;
+    border-radius: 200px;
+    border: 3px outset lightgray;
+    box-shadow: 2px 2px 5px gray;
+}
+
+.Tr-button {
+    width: 70px;
+    height: 40px;
+    margin-bottom: 5px;
+
+    align-self: flex-end;
+
+    background-color: #99ff99;
+    border: 5px outset #90ee90;
+    border-radius: 200px;
+}
+
+.Tr-table { 
+    width: 100%;
+    margin: 20px 0;
+
+    background-color: #ffffff;  
+    border: 2px solid darkgreen;
+
+    
+}
+
+.Tr-table_headers {
+    padding: 10px 20px;
+    background-color: #90ee90;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.Tr-table_data {
+    height: 200px;
+    margin-top: 10px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.material-icons {
+    cursor: pointer;
+  }
+
+.Ai-item {
+    padding: 10px 20px;
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+.Ai-delete {
+    cursor: pointer;
+}

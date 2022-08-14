@@ -24,13 +24,12 @@ function Photo() {
   };
 
   const handleSelect = async (evt) => {
-      const files = [...evt.target.files];
-      const prom = await Promise.all(files.map(o => fileToDataUrl(o)))
-      setUrls(prev => Array.from(new Set(prev.concat(prom))));
+    const files = [...evt.target.files];
+    const prom = await Promise.all(files.map((o) => fileToDataUrl(o)));
+    setUrls((prev) => Array.from(new Set(prev.concat(prom))));
   };
 
   const handleDelete = (photo) => {
-    
     //Почему не получается установить urls через splice? Через console.log проверял -
     //значения меняются. Key для каждого компонента устанавливается. Что я пропускаю?
 
@@ -38,18 +37,29 @@ function Photo() {
     // temp.splice(index, 1);
     // setUrls(temp);
 
-    setUrls(urls.filter(item => item !== photo));
-  }
+    setUrls(urls.filter((item) => item !== photo));
+  };
 
   return (
     <div>
-        <label className="Photo-input">
+      <label className="Photo-input">
         <span>Click to select</span>
-        <input type="file" accept="image/*" multiple name="image" onChange={handleSelect} />
-        </label>
+        <input
+          type="file"
+          accept="image/*"
+          multiple
+          name="image"
+          onChange={handleSelect}
+        />
+      </label>
       <div className="Photo-container">
         {urls.map((item, index) => (
-          <PhotoPreview key={nanoid()} photo={item} index={index} handleDelete={handleDelete}/>
+          <PhotoPreview
+            key={nanoid()}
+            photo={item}
+            index={index}
+            handleDelete={handleDelete}
+          />
         ))}
       </div>
     </div>
